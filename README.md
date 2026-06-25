@@ -1,8 +1,10 @@
 # Good Dog OS
 
+[![CI](https://github.com/tommydevries/good-dog-os/actions/workflows/ci.yml/badge.svg)](https://github.com/tommydevries/good-dog-os/actions/workflows/ci.yml)
+
 A data-driven dog-training app. Answer a few questions about your dog and it generates a personalized, week-by-week training plan, a deck of practice cards you can print, and a progress tracker. It runs entirely in your browser. No backend, no accounts, no tracking.
 
-**Live demo:** `https://<your-username>.github.io/good-dog-os/` _(enabled once you deploy, see below)_
+**Live demo:** [tommydevries.github.io/good-dog-os](https://tommydevries.github.io/good-dog-os/)
 
 ![The landing page](docs/screenshots/landing.png)
 
