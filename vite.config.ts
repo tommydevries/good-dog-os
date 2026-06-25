@@ -13,5 +13,7 @@ export default defineConfig(({ command }) => ({
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
     css: false,
+    // Unit/component tests live in src; e2e/ is Playwright's, not vitest's.
+    include: ['src/**/*.{test,spec}.{ts,tsx}'],
   },
 }))
