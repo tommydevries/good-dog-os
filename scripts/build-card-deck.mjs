@@ -34,32 +34,29 @@ const cardHtml = (c) => {
 </div>`
 }
 
+// Landscape sheet, 4 cards across by 2 high (8 per page), sized to cut out.
 const css = `
 * { box-sizing: border-box; }
 body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; color: #1b1b1b; }
-.sheet-head { text-align: center; padding: 6px 0 14px; }
-.sheet-head h1 { font-family: Georgia, serif; color: #33502f; font-size: 20pt; margin: 0; }
-.sheet-head p { color: #666; font-size: 9.5pt; margin: 4px 0 0; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.18in; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.12in; }
 .card {
-  border: 1.5px dashed #b4b4b4; border-radius: 10px; overflow: hidden;
-  height: 2.95in; display: flex; flex-direction: column; background: #fff;
+  border: 1.5px dashed #b4b4b4; border-radius: 8px; overflow: hidden;
+  height: 3.35in; display: flex; flex-direction: column; background: #fff;
   page-break-inside: avoid; break-inside: avoid;
 }
 .band { display: flex; justify-content: space-between; align-items: center;
-  padding: 7px 11px; color: #fff; font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-.band .dots { letter-spacing: 2px; font-size: 8pt; }
-.body { padding: 11px 13px; font-size: 9pt; line-height: 1.35; }
-.cmd { font-size: 7.5pt; color: #8a8a8a; text-transform: uppercase; letter-spacing: 0.06em; }
-.title { font-family: Georgia, serif; font-size: 13.5pt; color: #33502f; margin: 2px 0 8px; }
-.how { margin-bottom: 8px; }
-.win { background: #eef1ec; color: #33502f; padding: 6px 8px; border-radius: 6px; }
+  padding: 5px 8px; color: #fff; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+.band .dots { letter-spacing: 1.5px; font-size: 7pt; }
+.body { padding: 8px 10px; font-size: 7.6pt; line-height: 1.32; }
+.cmd { font-size: 6.5pt; color: #8a8a8a; text-transform: uppercase; letter-spacing: 0.06em; }
+.title { font-family: Georgia, serif; font-size: 11.5pt; color: #33502f; margin: 1px 0 6px; line-height: 1.1; }
+.how { margin-bottom: 6px; }
+.win { background: #eef1ec; color: #33502f; padding: 4px 7px; border-radius: 5px; }
 b { font-weight: 700; }
 `
 
 const html = `<!doctype html><html><head><meta charset="utf-8"><title>Good Dog Training Cards</title>
 <style>${css}</style></head><body>
-<div class="sheet-head"><h1>Good Dog Training Cards</h1><p>Cut along the dashed lines. Drop them in a jar and let everyone grab one a day.</p></div>
 <div class="grid">
 ${cards.map(cardHtml).join('\n')}
 </div>
