@@ -48,12 +48,15 @@ React + TypeScript + Vite + Tailwind, Zustand for state, Framer Motion for motio
 ```bash
 npm install
 npm run dev      # local dev server
-npm test         # the test suite
+npm test         # unit + component tests
+npm run e2e      # playwright end-to-end flow
 npm run lint     # eslint
 npm run build    # type-check and production build
 ```
 
-CI runs lint, tests, and the build on every push and pull request (`.github/workflows/ci.yml`).
+CI runs lint, tests, the build, and the end-to-end flow on every push and pull request (`.github/workflows/ci.yml`).
+
+**Quality:** 59 unit and component tests plus a Playwright end-to-end flow. Lighthouse on the landing page (mobile): **99 performance, 100 accessibility, 100 best practices, 100 SEO**. Fonts are self-hosted, so it loads fast and works offline.
 
 ## Printable card deck
 

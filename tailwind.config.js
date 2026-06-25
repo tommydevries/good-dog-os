@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: { DEFAULT: '#23211e', soft: '#5b554d', faint: '#938c81' },
+        ink: { DEFAULT: '#23211e', soft: '#5b554d', faint: '#6b665e' },
         paper: '#fffdf8',
         cream: '#f7f3ea',
         sand: '#ece5d6',
@@ -15,8 +15,8 @@ export default {
         sky: { DEFAULT: '#3b6ea5' },
       },
       fontFamily: {
-        display: ['Fraunces', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Fraunces Variable', 'Fraunces', 'Georgia', 'serif'],
+        sans: ['Inter Variable', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       fontSize: {
         '2xs': ['0.6875rem', { lineHeight: '1rem', letterSpacing: '0.04em' }],
