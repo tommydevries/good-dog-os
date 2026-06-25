@@ -19,11 +19,7 @@ export function CommandCard({ commandId }: { commandId: string }) {
         ))}
       </ol>
       <p className="mt-2 text-xs text-clay">Watch out: {c.mistake}</p>
-      {drill && (
-        <p className="mt-2 text-xs text-ink/50">
-          Goal: {drill.success}
-        </p>
-      )}
+      {drill && <p className="mt-2 text-xs text-ink/50">Goal: {drill.success}</p>}
     </Card>
   )
 }

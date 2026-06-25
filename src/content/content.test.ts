@@ -50,7 +50,9 @@ describe('content integrity', () => {
     for (const id of teachingOrder) {
       expect(commandIds.has(id), `teachingOrder ${id}`).toBe(true)
     }
-    expect(new Set(teachingOrder).size, 'teachingOrder has no duplicates').toBe(teachingOrder.length)
+    expect(new Set(teachingOrder).size, 'teachingOrder has no duplicates').toBe(
+      teachingOrder.length,
+    )
     for (const c of commands) {
       if (c.core) {
         expect(teachingOrder.includes(c.id), `core command ${c.id} in teachingOrder`).toBe(true)

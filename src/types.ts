@@ -11,7 +11,15 @@ export type ExperienceLevel = 'beginner' | 'some' | 'experienced'
 export type DogSize = 'small' | 'medium' | 'large'
 export type EnergyLevel = 'low' | 'medium' | 'high'
 export type GameImpact = 'none' | 'low' | 'medium' | 'high'
-export type GameCategory = 'nose' | 'thinking' | 'fetch' | 'hideseek' | 'water' | 'tug' | 'flirt' | 'impulse'
+export type GameCategory =
+  | 'nose'
+  | 'thinking'
+  | 'fetch'
+  | 'hideseek'
+  | 'water'
+  | 'tug'
+  | 'flirt'
+  | 'impulse'
 export type CommandCategory = 'foundation' | 'manners' | 'impulse' | 'recall'
 
 export interface Command {

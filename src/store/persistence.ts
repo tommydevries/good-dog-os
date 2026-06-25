@@ -31,11 +31,7 @@ export function loadPersisted(storage: Storage = localStorage): PersistedState {
     const raw = storage.getItem(STORAGE_KEY)
     if (!raw) return emptyPersisted()
     const parsed = JSON.parse(raw)
-    if (
-      !parsed ||
-      typeof parsed !== 'object' ||
-      parsed.schemaVersion !== SCHEMA_VERSION
-    ) {
+    if (!parsed || typeof parsed !== 'object' || parsed.schemaVersion !== SCHEMA_VERSION) {
       return emptyPersisted()
     }
     return {

@@ -30,7 +30,9 @@ export function ProblemList({ problemIds }: { problemIds: string[] }) {
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-ink/50">Train</p>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-ink/50">
+                Train
+              </p>
               <div className="mt-1 flex flex-wrap gap-1.5">
                 {p.trains.map((c) => (
                   <Tag key={c} tone="forest">

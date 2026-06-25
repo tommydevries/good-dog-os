@@ -19,9 +19,7 @@ describe('wizard helpers', () => {
   })
 
   it('assembles a profile, trimming the name and defaulting a missing age', () => {
-    const profile = toProfile(
-      draft({ name: '  Tracker  ', ageMonths: null, problems: ['recall'] }),
-    )
+    const profile = toProfile(draft({ name: '  Tracker  ', ageMonths: null, problems: ['recall'] }))
     expect(profile.name).toBe('Tracker')
     expect(profile.ageMonths).toBe(12)
     expect(profile.problems).toEqual(['recall'])

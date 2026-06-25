@@ -20,9 +20,7 @@ describe('generatePlan', () => {
   it('prioritizes the selected problem and selects the commands it trains', () => {
     const { plan } = generatePlan(makeProfile(), library)
     expect(plan.prioritizedProblemIds).toContain('counter-surfing')
-    expect(plan.coreCommandIds).toEqual(
-      expect.arrayContaining(['place', 'leave-it', 'off']),
-    )
+    expect(plan.coreCommandIds).toEqual(expect.arrayContaining(['place', 'leave-it', 'off']))
     expect(plan.weeks.length).toBeGreaterThan(0)
     expect(plan.weeks[0].phase).toBe('foundation')
     expect(plan.dogName).toBe('Tracker')
@@ -71,10 +69,7 @@ describe('generatePlan', () => {
 
   it('includes prerequisite commands automatically', () => {
     // recall trains "come" (prereq: name) and energy trains "stay" (prereq: sit)
-    const { plan } = generatePlan(
-      makeProfile({ problems: ['recall', 'energy'] }),
-      library,
-    )
+    const { plan } = generatePlan(makeProfile({ problems: ['recall', 'energy'] }), library)
     expect(plan.coreCommandIds).toContain('name')
     expect(plan.coreCommandIds).toContain('sit')
     // a command never appears before its prerequisite

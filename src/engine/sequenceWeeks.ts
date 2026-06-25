@@ -1,11 +1,4 @@
-import type {
-  CommandId,
-  ContentLibrary,
-  DogProfile,
-  GameId,
-  Problem,
-  ProgramWeek,
-} from '../types'
+import type { CommandId, ContentLibrary, DogProfile, GameId, Problem, ProgramWeek } from '../types'
 
 export interface ScheduleInputs {
   commands: CommandId[]
@@ -32,9 +25,7 @@ export function sequenceWeeks(
   const perWeek = commandsPerWeek(profile)
   const nameOf = (id: CommandId) => library.commands.find((c) => c.id === id)?.name ?? id
 
-  const gamePool = recommendedGameIds.length
-    ? recommendedGameIds
-    : library.games.map((g) => g.id)
+  const gamePool = recommendedGameIds.length ? recommendedGameIds : library.games.map((g) => g.id)
   let gameCursor = 0
   const nextGames = (n: number): GameId[] => {
     const out: GameId[] = []
@@ -56,8 +47,7 @@ export function sequenceWeeks(
       phase: 'foundation',
       focus: `Teach ${slice.map(nameOf).join(', ')}`,
       commandIds: slice,
-      milestone:
-        library.milestones[headline] ?? `${nameOf(headline)} is reliable in a quiet room.`,
+      milestone: library.milestones[headline] ?? `${nameOf(headline)} is reliable in a quiet room.`,
       gameIds: nextGames(2),
     })
   }

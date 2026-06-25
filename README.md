@@ -1,49 +1,72 @@
 # Good Dog OS
 
-A data-driven dog-training plan generator. Answer a few questions about your dog and it composes a personalized, week-by-week, force-free training plan from a structured content library, then (Phase 2) lets you track progress.
+A data-driven dog-training app. Answer a few questions about your dog and it generates a personalized, week-by-week training plan, a deck of practice cards you can print, and a progress tracker. It runs entirely in your browser. No backend, no accounts, no tracking.
 
-It runs entirely in the browser. No backend, no accounts, no tracking. Built as a static site for GitHub Pages.
+**Live demo:** `https://<your-username>.github.io/good-dog-os/` _(enabled once you deploy, see below)_
 
-## Why it is built this way
+![The landing page](docs/screenshots/landing.png)
 
-The interesting part is the architecture, not the screens:
+## About this project
 
-- **Content as data.** Every command, drill, problem, game, and program template lives in a typed content library (`src/content/`), decoupled from the UI. Growing the content never touches logic.
-- **A pure generation engine.** `generatePlan(profile, library) => { plan, rationale }` is a pure function with no I/O. Same input, same output. It is deterministic and explainable (it returns the reasons for its choices), which is why it is unit-tested heavily and why there is no LLM in the loop.
-- **Conservative and force-free.** The generated advice mirrors modern reward-based training and carries safety notes (for example, growth-plate cautions for a young large breed). It is not a substitute for a professional trainer or veterinarian.
+I do not write code. I build products. I built this one by directing Claude (Anthropic's Opus 4.8) across a series of sessions, and I am proud that every commit is co-authored by it. My job was the product: the idea, the architecture decisions, the scope calls, the content, and the design direction. Claude's job was the implementation.
 
-## Stack
+So read this repo as a product and a set of decisions, not as proof that I can hand-write a reducer. What I want it to show is that I can take a vague idea ("train my dog as well as a service dog") and turn it into a coherent, tested, deployable system.
 
-React + TypeScript + Vite + Tailwind CSS, Zustand for state, Framer Motion for motion, Vitest + Testing Library for tests.
+## What it does
+
+- **Onboard** your dog: breed, age, household, the problems you want to fix, time per day, your experience.
+- **Generate** a plan: prioritized problems, the commands to teach in order, a week-by-week program scaled to your time and experience, breed and age safety notes, and a "why this plan" rationale.
+- **Practice** with training cards: one command, one of the three Ds, one kid-readable challenge. Draw them in the app, or print and cut out the deck.
+- **Track** progress: a completion ring, an interactive proofing ladder per command, prerequisite locks, and a week checklist.
+
+![A generated plan](docs/screenshots/plan.png)
+
+| Training cards | Progress tracker |
+| --- | --- |
+| ![Training cards](docs/screenshots/cards.png) | ![Progress dashboard](docs/screenshots/progress.png) |
+
+## How it works (the part worth reading)
+
+The interesting decision is that the whole thing is **data plus a pure function**, not a pile of UI:
+
+- **Content as data.** Every command, drill, problem, game, breed, and training card lives in a typed content library under `src/content/`, decoupled from the UI. The same card data drives both the in-app deck and the printable deck, so they never drift.
+- **A deterministic generation engine.** `generatePlan(profile, library) => { plan, rationale }` is a pure function: no I/O, no globals, same input always yields the same output. It prioritizes problems, selects and dependency-orders commands, applies breed and age modifiers, sequences the weeks, and returns the reasons behind every choice. That is why it is the most heavily tested part of the codebase, and why there is no LLM in the loop: it is free, instant, offline, and explainable.
+- **The loop is connected.** Finishing a training card writes straight into the tracker's proofing ladders. The plan, the deck, and the tracker are one system, not three screens.
+
+### Stack
+
+React + TypeScript + Vite + Tailwind, Zustand for state, Framer Motion for motion, Vitest and Testing Library for tests. State persists to `localStorage` with a versioned schema.
+
+### Key decisions
+
+- **A deterministic engine, not an LLM** — explainable, free, offline, and unit-testable.
+- **HashRouter plus a relative build base** — the static build works at any GitHub Pages subpath and survives refreshes with zero server config.
+- **Versioned `localStorage`** — a schema-version mismatch is discarded safely instead of crashing a returning user.
 
 ## Develop
 
 ```bash
 npm install
 npm run dev      # local dev server
-npm test         # run the test suite
-npm run build    # type-check and build to dist/
-npm run preview  # preview the production build
+npm test         # the test suite
+npm run lint     # eslint
+npm run build    # type-check and production build
 ```
+
+CI runs lint, tests, and the build on every push and pull request (`.github/workflows/ci.yml`).
 
 ## Printable card deck
 
-`npm run cards:print` renders the same card data (`src/content/cards.json`) into a print-ready, cuttable HTML sheet. The app's "Training Cards" view draws from that same file, so the physical deck and the in-app deck never drift apart. One data source, two surfaces.
+```bash
+npm run cards:print
+```
+
+Renders the card data (`src/content/cards.json`) to a print-ready, cuttable HTML sheet. The in-app deck reads the same file. One source, two surfaces.
 
 ## Deploy
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and publishes to GitHub Pages. The Vite `base` is relative (`./`) so the build works at any Pages subpath without hardcoding the repo name, and the app uses `HashRouter` so deep links and refreshes work on a static host.
+Push to `main` and `.github/workflows/deploy.yml` builds and publishes to GitHub Pages. Set the repository's Pages source to "GitHub Actions." The relative base means the repo name is not hardcoded anywhere.
 
-## Project shape
+## License
 
-```
-src/
-  content/    typed content library (commands, drills, problems, games, breeds)
-  engine/     pure generatePlan() and its steps
-  store/      app state + versioned localStorage persistence
-  features/   onboarding wizard, plan view, tracker (Phase 2)
-  design/     tokens and UI primitives
-  routes/     pages
-```
-
-See `docs/plans/` in the parent workspace for the full implementation plan.
+MIT. See [LICENSE](LICENSE).

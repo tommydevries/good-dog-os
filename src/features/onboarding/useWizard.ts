@@ -36,10 +36,7 @@ export function stepValid(step: number, d: WizardDraft): boolean {
   switch (step) {
     case 0:
       return (
-        d.name.trim().length > 0 &&
-        d.ageMonths !== null &&
-        d.ageMonths >= 1 &&
-        d.ageMonths <= 240
+        d.name.trim().length > 0 && d.ageMonths !== null && d.ageMonths >= 1 && d.ageMonths <= 240
       )
     case 1:
       return d.householdSize >= 1

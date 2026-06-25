@@ -29,11 +29,7 @@ export function commandStage(progress: ProgressState, id: CommandId): ProofStage
 }
 
 /** A command is locked while any in-plan prerequisite has not been started. */
-export function isLocked(
-  command: Command,
-  progress: ProgressState,
-  planIds: CommandId[],
-): boolean {
+export function isLocked(command: Command, progress: ProgressState, planIds: CommandId[]): boolean {
   const inPlan = new Set(planIds)
   return command.prerequisites.some(
     (p) => inPlan.has(p) && commandStage(progress, p) === 'not-started',

@@ -9,3 +9,6 @@ coverage
 node_modules/.tmp
 .claude
 training-cards.html
+vite.config.js
+vite.config.d.ts
+*.tsbuildinfo

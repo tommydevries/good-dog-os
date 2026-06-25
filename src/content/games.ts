@@ -14,7 +14,8 @@ export const games: Game[] = [
     name: 'The muffin-tin game',
     category: 'nose',
     impact: 'none',
-    summary: 'Treats in a few cups, every cup covered with a tennis ball. Bait only some so he uses his nose.',
+    summary:
+      'Treats in a few cups, every cup covered with a tennis ball. Bait only some so he uses his nose.',
   },
   {
     id: 'which-hand',
@@ -35,7 +36,8 @@ export const games: Game[] = [
     name: 'Snuffle mat',
     category: 'nose',
     impact: 'none',
-    summary: 'Sprinkle a meal into a snuffle mat or knotted towel and let him sniff out every piece.',
+    summary:
+      'Sprinkle a meal into a snuffle mat or knotted towel and let him sniff out every piece.',
   },
   {
     id: 'box-game',
@@ -70,7 +72,8 @@ export const games: Game[] = [
     name: 'Two-ball fetch',
     category: 'fetch',
     impact: 'high',
-    summary: 'Throw one ball; the instant he returns, throw the second so he learns to bring it back.',
+    summary:
+      'Throw one ball; the instant he returns, throw the second so he learns to bring it back.',
   },
   {
     id: 'hide-and-seek',

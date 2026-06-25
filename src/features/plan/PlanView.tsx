@@ -27,9 +27,7 @@ export function PlanView() {
   return (
     <main className="mx-auto max-w-3xl space-y-10 px-6 py-12">
       <header>
-        <p className="text-xs uppercase tracking-wide text-ink/50">
-          {plan.totalWeeks}-week plan
-        </p>
+        <p className="text-xs uppercase tracking-wide text-ink/50">{plan.totalWeeks}-week plan</p>
         <h1 className="font-serif text-4xl text-forest">{plan.dogName}’s training plan</h1>
         <p className="mt-2 text-ink/70">{plan.profileSummary}</p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
