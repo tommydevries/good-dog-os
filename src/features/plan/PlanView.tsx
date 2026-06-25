@@ -39,6 +39,12 @@ export function PlanView() {
           >
             Draw a training card
           </Link>
+          <Link
+            to="/progress"
+            className="rounded-xl2 bg-sand px-5 py-2.5 text-sm font-semibold text-forest-dark transition-colors hover:bg-forest-light"
+          >
+            Track progress
+          </Link>
           <Button variant="secondary" onClick={regenerate}>
             Regenerate
           </Button>
