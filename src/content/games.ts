@@ -1,0 +1,103 @@
+import type { Game } from '../types'
+
+// Seeded from The Good Dog Handbook games menu. Impact gates young-large-breed safety.
+export const games: Game[] = [
+  {
+    id: 'find-it',
+    name: 'Find it (scatter)',
+    category: 'nose',
+    impact: 'none',
+    summary: 'Toss a handful of kibble across the floor or grass and say "find it".',
+  },
+  {
+    id: 'muffin-tin',
+    name: 'The muffin-tin game',
+    category: 'nose',
+    impact: 'none',
+    summary: 'Treats in a few cups, every cup covered with a tennis ball. Bait only some so he uses his nose.',
+  },
+  {
+    id: 'which-hand',
+    name: 'Which hand',
+    category: 'nose',
+    impact: 'none',
+    summary: 'Hide a treat in one closed fist; mark "Yes" when he picks the right one.',
+  },
+  {
+    id: 'hide-treats',
+    name: 'Hide treats and go find',
+    category: 'nose',
+    impact: 'none',
+    summary: 'Stash treats around a room and send him to search; build to harder spots.',
+  },
+  {
+    id: 'snuffle-mat',
+    name: 'Snuffle mat',
+    category: 'nose',
+    impact: 'none',
+    summary: 'Sprinkle a meal into a snuffle mat or knotted towel and let him sniff out every piece.',
+  },
+  {
+    id: 'box-game',
+    name: '101 things to do with a box',
+    category: 'thinking',
+    impact: 'none',
+    summary: 'Mark any interaction with a box, then get pickier. He learns to offer ideas.',
+  },
+  {
+    id: 'new-trick',
+    name: 'Teach a new trick',
+    category: 'thinking',
+    impact: 'none',
+    summary: 'Spin, bow, crawl, roll over. Learning something new is deeply tiring.',
+  },
+  {
+    id: 'food-puzzle',
+    name: 'Food puzzles and Kongs',
+    category: 'thinking',
+    impact: 'none',
+    summary: 'Feed meals out of puzzle feeders, a frozen stuffed Kong, or a lick mat.',
+  },
+  {
+    id: 'its-your-choice',
+    name: "It's Your Choice",
+    category: 'impulse',
+    impact: 'none',
+    summary: 'Open palm of treats; when he dives in, close it. Reward the moment he backs off.',
+  },
+  {
+    id: 'two-ball-fetch',
+    name: 'Two-ball fetch',
+    category: 'fetch',
+    impact: 'high',
+    summary: 'Throw one ball; the instant he returns, throw the second so he learns to bring it back.',
+  },
+  {
+    id: 'hide-and-seek',
+    name: 'Hide and seek',
+    category: 'hideseek',
+    impact: 'low',
+    summary: 'You hide, he finds you. Drop the calling over time so he uses his nose.',
+  },
+  {
+    id: 'water-retrieve',
+    name: 'Shallow water retrieves',
+    category: 'water',
+    impact: 'low',
+    summary: 'Toss a floating toy into shallow water; he wades and swims it back toward you.',
+  },
+  {
+    id: 'tug',
+    name: 'Tug, with rules',
+    category: 'tug',
+    impact: 'low',
+    summary: 'Tug sideways; he takes it and gives it up on cue. Reward the release heavily.',
+  },
+  {
+    id: 'flirt-pole',
+    name: 'Flirt pole',
+    category: 'flirt',
+    impact: 'medium',
+    summary: 'A chase outlet on the ground. Keep the toy low, no high jumps or hard spins.',
+  },
+]

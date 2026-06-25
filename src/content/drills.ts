@@ -1,0 +1,173 @@
+import type { Drill } from '../types'
+
+// Seeded from The Good Dog Handbook drill library. One drill per core skill.
+export const drills: Drill[] = [
+  {
+    id: 'drill-name',
+    commandId: 'name',
+    name: 'The name game',
+    goal: 'His name means "look at me, right now".',
+    steps: [
+      'Say his name once. The instant he looks, mark "Yes" and treat.',
+      'Do ten in a row, then say it when he is mildly distracted.',
+      'Never repeat the name; if he does not look, make it easier.',
+    ],
+    success: 'His head snaps to you on the first call, indoors and in the yard.',
+  },
+  {
+    id: 'drill-sit',
+    commandId: 'sit',
+    name: 'Lure the sit',
+    goal: 'Rear on the floor on cue, held until released.',
+    steps: [
+      'Treat at his nose, up and back; his rear drops. Mark, treat, release.',
+      'Fade the lure within a few reps; pay from your pocket.',
+      'Add the word as he is already moving into it.',
+    ],
+    success: 'Sits on the first word, then proof with the three Ds.',
+  },
+  {
+    id: 'drill-down',
+    commandId: 'down',
+    name: 'Lure the down',
+    goal: 'Lie fully down on cue.',
+    steps: [
+      'From a sit, lure the treat to the floor and out.',
+      'Mark "Yes", treat between his paws on the ground.',
+      'Add the word once he offers it easily.',
+    ],
+    success: 'Downs on cue and holds until released.',
+  },
+  {
+    id: 'drill-stay',
+    commandId: 'stay',
+    name: 'The three Ds',
+    goal: 'Hold the position under duration, distance, and distraction.',
+    steps: [
+      'Duration: count up the seconds before you pay; build to a minute.',
+      'Distance: step back and return to him to pay; build to across the room.',
+      'Distraction: work a ladder from a weight-shift up to the front door opening.',
+    ],
+    success: 'Holds a one-minute stay while you cross the room with distractions.',
+  },
+  {
+    id: 'drill-settle',
+    commandId: 'settle',
+    name: 'Capture calm',
+    goal: 'Relax on cue, not just hold a tense down.',
+    steps: [
+      'After exercise, sit nearby with his mat down and be boring.',
+      'Each time he relaxes, calmly drop a treat between his paws, no words.',
+      'Reward longer stretches of calm over time.',
+    ],
+    success: 'Shifts from excited to settled while the household carries on.',
+  },
+  {
+    id: 'drill-leave-it',
+    commandId: 'leave-it',
+    name: 'The leave-it ladder',
+    goal: 'Turn away from the thing on cue.',
+    steps: [
+      'Closed fist; mark the instant he backs off, pay from the other hand.',
+      'Floor under your hand, then open palm, then uncovered.',
+      'Add the words, then proof to dropped food indoors and on a walk.',
+    ],
+    success: 'Turns away from dropped food on cue, even outdoors.',
+  },
+  {
+    id: 'drill-off',
+    commandId: 'off',
+    name: 'Four on the floor',
+    goal: 'Reward paws on the floor, never paws up.',
+    steps: [
+      'The instant a paw hits the floor, mark "Yes" and reward low.',
+      'Repeat at the counter edge and during greetings.',
+      'Never reward while he is still up.',
+    ],
+    success: 'Gets off on cue and keeps four paws down for attention.',
+  },
+  {
+    id: 'drill-place',
+    commandId: 'place',
+    name: 'Build Place',
+    goal: 'Go to the mat and hold it through temptation.',
+    steps: [
+      'Toss a treat on the mat; when he steps on, mark and treat on the mat.',
+      'Add the word, release with "Done", reset off the mat. Add duration and distance.',
+      'Add kitchen distraction: open the fridge, drop a crumb, clatter a pan.',
+    ],
+    success: 'Holds Place through a full dinner prep.',
+  },
+  {
+    id: 'drill-drop-it',
+    commandId: 'drop-it',
+    name: 'Drop it and trade',
+    goal: 'Giving things up is the best deal in the house.',
+    steps: [
+      'Two-toy game: bring a second toy to life so he drops the first.',
+      'Add "drop it" as he opens his mouth; pay every time.',
+      'Trade up for treats, often giving the item back so giving up is not a loss.',
+    ],
+    success: 'Empties his mouth on the first ask and brings you things.',
+  },
+  {
+    id: 'drill-come',
+    commandId: 'come',
+    name: 'Recall games',
+    goal: 'Run to you, fast, every time, paid like a jackpot.',
+    steps: [
+      'Ping-pong recall: spread out and call him back and forth, party each arrival.',
+      'Restrained recall: one person holds, another calls, release into a sprint.',
+      'Hide and seek, then long-line games outdoors.',
+    ],
+    success: 'Comes the first time, even from a fun distraction.',
+  },
+  {
+    id: 'drill-touch',
+    commandId: 'touch',
+    name: 'Hand target',
+    goal: 'Bump his nose into your palm on cue, even at a distance.',
+    steps: [
+      'Present an open palm; mark the touch, treat from the hidden hand.',
+      'Add the word, then cue with an empty hand and pay after.',
+      'Build distance and distractions; rebuild outside on a long line.',
+    ],
+    success: 'Drives across the room to punch your palm on the first ask.',
+  },
+  {
+    id: 'drill-collar-grab',
+    commandId: 'collar-grab',
+    name: 'The collar-grab game',
+    goal: 'Reaching for his collar predicts a treat, so he leans in.',
+    steps: [
+      'Reach toward his shoulder and feed a treat from the other hand.',
+      'Build to touching, then briefly holding, the collar, treating each time.',
+      'Add distance and have every family member practice.',
+    ],
+    success: 'Moves toward your hand when you reach for the collar.',
+  },
+  {
+    id: 'drill-emergency-recall',
+    commandId: 'emergency-recall',
+    name: 'The sacred word',
+    goal: 'One special cue that always brings him, for emergencies only.',
+    steps: [
+      'Charge a unique word with jackpots; no coming required at first.',
+      'Add coming, then distance on a long line with a sprint backward.',
+      'Keep it sacred; refresh monthly and never use it casually.',
+    ],
+    success: 'Turns on a dime to the word because it has never let him down.',
+  },
+  {
+    id: 'drill-follow-me',
+    commandId: 'follow-me',
+    name: 'Loose-leash walking',
+    goal: 'Walk near you on a slack leash.',
+    steps: [
+      'Reward being at your side, treat at your pant seam.',
+      'Stop walking the instant the leash goes tight.',
+      'Turn check-ins into a game.',
+    ],
+    success: 'Keeps the leash loose and checks in on walks.',
+  },
+]
