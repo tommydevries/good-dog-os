@@ -12,4 +12,68 @@ html {
 
 body {
   @apply bg-cream text-ink font-sans antialiased;
+  font-feature-settings: 'ss01', 'cv05';
+}
+
+/* Display face: optical sizing + a touch of softness for warmth. */
+.font-display {
+  font-optical-sizing: auto;
+  font-variation-settings: 'SOFT' 30;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animate-rise {
+    animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .animate-fade {
+    animation: fade 0.4s ease both;
+  }
+  .animate-draw {
+    animation: draw 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes draw {
+  from {
+    opacity: 0;
+    transform: translateY(14px) rotate(-1.2deg) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise,
+  .animate-fade,
+  .animate-draw {
+    animation: none;
+  }
 }

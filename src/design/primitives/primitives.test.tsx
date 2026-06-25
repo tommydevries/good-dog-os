@@ -21,7 +21,7 @@ describe('design primitives', () => {
 
   it('ProgressRing exposes an accessible percentage label', () => {
     render(<ProgressRing value={0.5} />)
-    expect(screen.getByRole('img', { name: '50% complete' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: '50 percent complete' })).toBeInTheDocument()
   })
 
   it('Tag renders its content', () => {

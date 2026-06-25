@@ -5,7 +5,9 @@ export function ProblemList({ problemIds }: { problemIds: string[] }) {
   if (problemIds.length === 0) return null
   return (
     <section>
-      <h2 className="mb-3 font-serif text-2xl text-forest">What we’ll fix, in order</h2>
+      <h2 className="mb-3 font-display text-2xl font-semibold text-forest">
+        What we’ll fix, in order
+      </h2>
       <div className="space-y-4">
         {problemIds.map((pid, i) => {
           const p = getProblem(pid)

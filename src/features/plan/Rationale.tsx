@@ -5,7 +5,7 @@ export function Rationale({ entries }: { entries: RationaleEntry[] }) {
   if (entries.length === 0) return null
   return (
     <section>
-      <h2 className="mb-3 font-serif text-2xl text-forest">Why this plan</h2>
+      <h2 className="mb-3 font-display text-2xl font-semibold text-forest">Why this plan</h2>
       <Card>
         <ul className="space-y-3">
           {entries.map((e, i) => (

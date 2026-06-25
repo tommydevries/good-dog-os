@@ -18,7 +18,9 @@ const phaseLabel: Record<ProgramPhase, string> = {
 export function ProgramTimeline({ weeks }: { weeks: ProgramWeek[] }) {
   return (
     <section>
-      <h2 className="mb-3 font-serif text-2xl text-forest">The {weeks.length}-week program</h2>
+      <h2 className="mb-3 font-display text-2xl font-semibold text-forest">
+        The {weeks.length}-week program
+      </h2>
       <div className="space-y-3">
         {weeks.map((w) => (
           <Card key={w.week}>
