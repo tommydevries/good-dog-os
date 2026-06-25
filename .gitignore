@@ -8,3 +8,4 @@ coverage
 *.log
 node_modules/.tmp
 .claude
+training-cards.html

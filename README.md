@@ -26,6 +26,10 @@ npm run build    # type-check and build to dist/
 npm run preview  # preview the production build
 ```
 
+## Printable card deck
+
+`npm run cards:print` renders the same card data (`src/content/cards.json`) into a print-ready, cuttable HTML sheet. The app's "Training Cards" view draws from that same file, so the physical deck and the in-app deck never drift apart. One data source, two surfaces.
+
 ## Deploy
 
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and publishes to GitHub Pages. The Vite `base` is relative (`./`) so the build works at any Pages subpath without hardcoding the repo name, and the app uses `HashRouter` so deep links and refreshes work on a static host.
