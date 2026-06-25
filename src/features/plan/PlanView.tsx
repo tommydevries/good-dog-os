@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useAppStore } from '../../store/useAppStore'
 import { Button } from '../../design'
 import { SafetyNotes } from './SafetyNotes'
@@ -32,7 +32,13 @@ export function PlanView() {
         </p>
         <h1 className="font-serif text-4xl text-forest">{plan.dogName}’s training plan</h1>
         <p className="mt-2 text-ink/70">{plan.profileSummary}</p>
-        <div className="mt-4 flex gap-3">
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <Link
+            to="/cards"
+            className="rounded-xl2 bg-forest px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-forest-dark"
+          >
+            Draw a training card
+          </Link>
           <Button variant="secondary" onClick={regenerate}>
             Regenerate
           </Button>

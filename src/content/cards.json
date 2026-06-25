@@ -1,0 +1,39 @@
+[
+  { "id": "name-learn-1", "command": "name", "dimension": "learn", "level": 1, "title": "Say his name", "how": "Say his name one time. The second he looks at you, say \"Yes!\" and give a treat. Do it 5 times.", "win": "He looks at you fast every time." },
+  { "id": "name-distraction-2", "command": "name", "dimension": "distraction", "level": 2, "title": "Name while he sniffs", "how": "Wait until he is sniffing the ground. Say his name once. Mark \"Yes!\" and treat when he looks up.", "win": "He turns to you even when busy." },
+
+  { "id": "sit-learn-1", "command": "sit", "dimension": "learn", "level": 1, "title": "Easy sits", "how": "Hold a treat at his nose and lift it up and back. When his bottom hits the floor, say \"Yes!\" and treat. Do 5.", "win": "He sits when you ask." },
+  { "id": "sit-duration-1", "command": "sit", "dimension": "duration", "level": 1, "title": "Sit and count", "how": "Ask for a sit. Count to 3 in your head, then say \"Yes!\" and treat. Next try, count to 5.", "win": "He holds the sit while you count." },
+  { "id": "sit-distance-2", "command": "sit", "dimension": "distance", "level": 2, "title": "Sit and step away", "how": "Ask for a sit and say \"stay.\" Take 2 steps back, then step back in and treat. Do not call him to you.", "win": "He stays sitting while you step away." },
+  { "id": "sit-distraction-2", "command": "sit", "dimension": "distraction", "level": 2, "title": "Sit while I clap", "how": "Ask for a sit. Clap your hands once. If he stays, say \"Yes!\" and treat. Too hard? Clap softer.", "win": "He holds the sit when you clap." },
+
+  { "id": "down-learn-1", "command": "down", "dimension": "learn", "level": 1, "title": "Easy downs", "how": "From a sit, lure a treat down to the floor and out. When he lies down, say \"Yes!\" and treat. Do 5.", "win": "He lies all the way down." },
+  { "id": "down-duration-2", "command": "down", "dimension": "duration", "level": 2, "title": "Down and relax", "how": "Ask for a down. Count slowly to 10, dropping a treat between his paws every few counts.", "win": "He holds a down for 10 seconds." },
+
+  { "id": "stay-duration-1", "command": "stay", "dimension": "duration", "level": 1, "title": "Tiny stays", "how": "Ask for a sit and say \"stay.\" Count to 2, then say \"Done\" and treat. Add one count each try.", "win": "He waits for the word \"Done.\"" },
+  { "id": "stay-distance-2", "command": "stay", "dimension": "distance", "level": 2, "title": "Stay while I walk", "how": "Put him in a stay. Take 3 steps to the side, then walk back and treat. Always go back to him.", "win": "He holds while you move around." },
+  { "id": "stay-distraction-3", "command": "stay", "dimension": "distraction", "level": 3, "title": "Stay by the door", "how": "Ask for a stay near a door. Touch the doorknob. If he holds, say \"Yes!\" and treat. Build up to opening it.", "win": "He stays even when the door moves." },
+
+  { "id": "place-learn-1", "command": "place", "dimension": "learn", "level": 1, "title": "Find your bed", "how": "Toss a treat onto his mat. When he steps on, say \"Place,\" then \"Yes!\" and treat on the mat. Do 5.", "win": "He goes to his mat when asked." },
+  { "id": "place-duration-2", "command": "place", "dimension": "duration", "level": 2, "title": "Place during a snack", "how": "Send him to Place. Sit nearby and eat a snack. Treat him on the mat every few seconds for staying.", "win": "He stays on his mat while you eat." },
+  { "id": "place-distraction-2", "command": "place", "dimension": "distraction", "level": 2, "title": "Place while I cook", "how": "Send him to Place. Open the fridge or rattle a pan. Treat him on the mat for not getting up.", "win": "He holds Place through kitchen noises." },
+
+  { "id": "leave-it-learn-1", "command": "leave-it", "dimension": "learn", "level": 1, "title": "Closed-fist leave it", "how": "Hold a treat in a closed fist. When he stops sniffing and backs off, say \"Yes!\" and treat from the OTHER hand.", "win": "He backs away from your fist." },
+  { "id": "leave-it-distraction-2", "command": "leave-it", "dimension": "distraction", "level": 2, "title": "Leave the floor treat", "how": "Put a treat on the floor under your hand. Say \"leave it.\" When he backs off, mark \"Yes!\" and treat from your other hand.", "win": "He turns away from a treat on the floor." },
+
+  { "id": "off-learn-1", "command": "off", "dimension": "learn", "level": 1, "title": "Four on the floor", "how": "When he jumps up, wait. The second all four paws are on the floor, say \"Yes!\" and treat down low.", "win": "He keeps his paws on the floor for treats." },
+
+  { "id": "drop-it-learn-1", "command": "drop-it", "dimension": "learn", "level": 1, "title": "Drop it for a trade", "how": "While he holds a toy, show a treat and say \"drop it.\" When he lets go, mark \"Yes!\" and trade the treat. Do 5.", "win": "He opens his mouth on \"drop it.\"" },
+  { "id": "drop-it-distraction-2", "command": "drop-it", "dimension": "distraction", "level": 2, "title": "Two-toy trade", "how": "Play with one toy, then bring a second toy to life. When he drops the first for it, say \"Yes!\" Swap back and forth.", "win": "He happily gives up a toy." },
+
+  { "id": "come-learn-1", "command": "come", "dimension": "learn", "level": 1, "title": "Come for a party", "how": "From a few steps away, open your arms and say \"Come!\" in a happy voice. Big party and a treat when he gets there.", "win": "He runs straight to you." },
+  { "id": "come-distance-2", "command": "come", "dimension": "distance", "level": 2, "title": "Ping-pong recall", "how": "Two people, a few steps apart. Take turns calling \"Come!\" Treat and cheer each time he arrives. Move farther apart.", "win": "He races back and forth to you." },
+  { "id": "come-distraction-3", "command": "come", "dimension": "distraction", "level": 3, "title": "Come past a toy", "how": "Have someone hold a toy nearby. From a few steps away call \"Come!\" Throw a big party when he reaches you.", "win": "He comes even with a toy out." },
+
+  { "id": "touch-learn-1", "command": "touch", "dimension": "learn", "level": 1, "title": "Bump my hand", "how": "Hold out a flat open hand near his nose. When he bumps it, say \"Yes!\" and treat from your other hand. Do 5.", "win": "He touches your hand with his nose." },
+  { "id": "touch-distance-2", "command": "touch", "dimension": "distance", "level": 2, "title": "Touch from far", "how": "Hold your hand out a few steps away and say \"Touch!\" He should come bump it. Treat. Step farther each time.", "win": "He runs over to touch your hand." },
+
+  { "id": "settle-duration-1", "command": "settle", "dimension": "duration", "level": 1, "title": "Catch him being calm", "how": "When he lies down on his own, quietly walk over and drop a treat between his paws. No words. Do it a few times.", "win": "He chooses to lie down and relax." },
+
+  { "id": "follow-me-distraction-2", "command": "follow-me", "dimension": "distraction", "level": 2, "title": "Walk with me", "how": "Walk a few steps. Treat him at your side when the leash is loose. If he pulls, stop like a tree until it loosens.", "win": "He walks next to you without pulling." }
+]

@@ -139,3 +139,19 @@ export interface ProgressState {
   completedWeeks: number[]
   updatedAt: string | null
 }
+
+// ---- Training cards (shared by the app deck and the printable deck) ----
+
+export type CardDimension = 'learn' | 'duration' | 'distance' | 'distraction'
+
+export interface TrainingCard {
+  id: string
+  command: CommandId
+  dimension: CardDimension
+  level: 1 | 2 | 3
+  title: string
+  /** Kid-readable instruction: exactly what to do. */
+  how: string
+  /** What success looks like. */
+  win: string
+}

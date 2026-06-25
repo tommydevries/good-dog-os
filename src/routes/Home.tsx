@@ -35,6 +35,9 @@ export function Home() {
             </Link>
           )}
         </div>
+        <Link to="/cards" className="mt-4 inline-block text-sm text-ink/50 hover:text-forest">
+          or just grab a training card
+        </Link>
       </motion.div>
     </main>
   )

@@ -5,6 +5,7 @@ import type {
   Drill,
   Game,
   Problem,
+  TrainingCard,
 } from '../types'
 import { commands } from './commands'
 import { drills } from './drills'
@@ -12,6 +13,9 @@ import { problems } from './problems'
 import { games } from './games'
 import { breeds } from './breeds'
 import { teachingOrder, milestones } from './programTemplates'
+import cardsData from './cards.json'
+
+export const cards = cardsData as TrainingCard[]
 
 export const library: ContentLibrary = {
   commands,
@@ -43,5 +47,8 @@ export const getBreed = (id: string): Breed | undefined => breedIndex.get(id)
 export const getDrill = (id: string): Drill | undefined => drillIndex.get(id)
 export const getDrillForCommand = (commandId: string): Drill | undefined =>
   drillByCommand.get(commandId)
+
+const cardIndex = indexBy(cards)
+export const getCard = (id: string): TrainingCard | undefined => cardIndex.get(id)
 
 export { commands, drills, problems, games, breeds, teachingOrder, milestones }
