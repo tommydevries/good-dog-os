@@ -28,7 +28,7 @@ npm run preview  # preview the production build
 
 ## Deploy
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and publishes to GitHub Pages. The Vite `base` is set to `/good-dog-os/` for the project subpath, and the app uses `HashRouter` so deep links and refreshes work on a static host.
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and publishes to GitHub Pages. The Vite `base` is relative (`./`) so the build works at any Pages subpath without hardcoding the repo name, and the app uses `HashRouter` so deep links and refreshes work on a static host.
 
 ## Project shape
 
