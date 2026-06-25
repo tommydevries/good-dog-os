@@ -1,15 +1,8 @@
-import type { CardDimension, TrainingCard } from '../../types'
-import { getCommand } from '../../content'
-
-const DIM: Record<CardDimension, { label: string; color: string }> = {
-  learn: { label: 'Learn', color: '#33502f' },
-  duration: { label: 'Duration', color: '#c2603f' },
-  distance: { label: 'Distance', color: '#3b6ea5' },
-  distraction: { label: 'Distraction', color: '#a9821f' },
-}
+import type { TrainingCard } from '../../types'
+import { dimensions, getCommand } from '../../content'
 
 export function TrainingCardView({ card }: { card: TrainingCard }) {
-  const meta = DIM[card.dimension]
+  const meta = dimensions[card.dimension]
   const commandName = getCommand(card.command)?.name ?? card.command
   return (
     <div className="overflow-hidden rounded-xl2 border border-forest-light/60 bg-white shadow-md">
@@ -28,7 +21,10 @@ export function TrainingCardView({ card }: { card: TrainingCard }) {
         </span>
       </div>
       <div className="p-5">
-        <p className="text-xs font-semibold uppercase tracking-wide text-ink/40">{commandName}</p>
+        <p className="text-xs italic text-ink/50">{meta.intent}</p>
+        <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-ink/40">
+          {commandName}
+        </p>
         <h3 className="mt-1 font-serif text-2xl text-forest">{card.title}</h3>
         <p className="mt-3 text-sm text-ink/80">
           <span className="font-semibold">Do this:</span> {card.how}

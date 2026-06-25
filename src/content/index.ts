@@ -1,5 +1,6 @@
 import type {
   Breed,
+  CardDimension,
   Command,
   ContentLibrary,
   Drill,
@@ -14,8 +15,19 @@ import { games } from './games'
 import { breeds } from './breeds'
 import { teachingOrder, milestones } from './programTemplates'
 import cardsData from './cards.json'
+import dimensionsData from './dimensions.json'
 
 export const cards = cardsData as TrainingCard[]
+
+export interface DimensionMeta {
+  label: string
+  color: string
+  intent: string
+}
+
+/** Style metadata shared by the app card, the legend, and the printable deck. */
+export const dimensions = dimensionsData as Record<CardDimension, DimensionMeta>
+export const dimensionOrder: CardDimension[] = ['learn', 'duration', 'distance', 'distraction']
 
 export const library: ContentLibrary = {
   commands,

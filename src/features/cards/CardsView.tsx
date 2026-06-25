@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { cards } from '../../content'
+import { cards, dimensions, dimensionOrder } from '../../content'
 import { eligibleCards, drawCard, dimensionToStage } from '../../cards/deck'
 import { useAppStore } from '../../store/useAppStore'
 import { Button } from '../../design'
@@ -65,7 +65,28 @@ export function CardsView() {
         </p>
       )}
 
-      <div className="mt-10 text-center">
+      <div className="mt-10 rounded-xl2 border border-forest-light/50 bg-white/60 p-4">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink/40">
+          The deck key
+        </p>
+        <ul className="space-y-1.5 text-xs text-ink/70">
+          {dimensionOrder.map((d) => (
+            <li key={d} className="flex items-center gap-2">
+              <span
+                className="h-3 w-3 flex-none rounded-sm"
+                style={{ background: dimensions[d].color }}
+              />
+              <span>
+                <span className="font-semibold text-ink">{dimensions[d].label}</span> —{' '}
+                {dimensions[d].intent}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-2 text-xs text-ink/50">Dots in the corner = difficulty (1 to 3).</p>
+      </div>
+
+      <div className="mt-8 text-center">
         <Link
           to={plan ? '/plan' : '/'}
           className="text-sm font-semibold text-forest hover:underline"

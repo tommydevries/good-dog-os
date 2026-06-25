@@ -1,0 +1,6 @@
+{
+  "learn": { "label": "Learn", "color": "#33502f", "intent": "Teach the skill from scratch." },
+  "duration": { "label": "Duration", "color": "#c2603f", "intent": "Hold it longer." },
+  "distance": { "label": "Distance", "color": "#3b6ea5", "intent": "Hold it while you move away." },
+  "distraction": { "label": "Distraction", "color": "#a9821f", "intent": "Hold it while something tempting happens." }
+}
