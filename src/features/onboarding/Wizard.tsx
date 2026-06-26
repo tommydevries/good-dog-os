@@ -62,6 +62,7 @@ export function Wizard() {
   const generate = useAppStore((s) => s.generate)
   const [step, setStep] = useState(0)
   const [draft, setDraft] = useState<WizardDraft>(emptyDraft)
+  const [ageUnit, setAgeUnit] = useState<'months' | 'years'>('months')
   const update = (patch: Partial<WizardDraft>) => setDraft((d) => ({ ...d, ...patch }))
 
   const valid = stepValid(step, draft)
@@ -139,21 +140,55 @@ export function Wizard() {
                 </select>
               </div>
               <div>
-                <label htmlFor="dog-age" className="mb-1.5 block text-sm font-medium">
-                  Age (months)
-                </label>
+                <div className="mb-1.5 flex items-center justify-between">
+                  <label htmlFor="dog-age" className="text-sm font-medium">
+                    Age
+                  </label>
+                  <div className="flex overflow-hidden rounded-lg border border-line text-xs">
+                    {(['months', 'years'] as const).map((unit) => (
+                      <button
+                        key={unit}
+                        type="button"
+                        onClick={() => {
+                          setAgeUnit(unit)
+                          update({ ageMonths: null })
+                        }}
+                        className={`px-3 py-1 font-medium capitalize transition-colors ${
+                          ageUnit === unit
+                            ? 'bg-forest text-white'
+                            : 'bg-paper text-ink-faint hover:text-ink'
+                        }`}
+                      >
+                        {unit}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <input
                   id="dog-age"
                   type="number"
                   min={1}
-                  max={240}
+                  max={ageUnit === 'months' ? 24 : 20}
+                  step={1}
                   className={inputClass}
-                  value={draft.ageMonths ?? ''}
-                  onChange={(e) =>
-                    update({ ageMonths: e.target.value === '' ? null : Number(e.target.value) })
-                  }
-                  placeholder="7"
+                  value={draft.ageMonths !== null
+                    ? (ageUnit === 'years' ? Math.round(draft.ageMonths / 12) : draft.ageMonths)
+                    : ''}
+                  onChange={(e) => {
+                    if (e.target.value === '') {
+                      update({ ageMonths: null })
+                    } else {
+                      const val = Number(e.target.value)
+                      update({ ageMonths: ageUnit === 'years' ? val * 12 : val })
+                    }
+                  }}
+                  placeholder={ageUnit === 'months' ? '7' : '3'}
                 />
+                <p className="mt-1.5 text-xs text-ink-faint">
+                  {ageUnit === 'months'
+                    ? 'Exact age matters most under 18 months — fast growth, changing needs.'
+                    : 'Switch to months if your dog is still in the puppy phase.'}
+                </p>
               </div>
             </div>
           </>
